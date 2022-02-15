@@ -1,5 +1,6 @@
 package com.pokedex.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Setter
 public class Pokemon {
     private PokemonResource color;
+    @JsonProperty("flavor_text_entries")
     private List<PokemonFlavorTextEntry> flavorTextEntries;
     private List<PokemonGenera> genera;
     private PokemonResource generation;
