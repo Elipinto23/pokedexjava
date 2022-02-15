@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Document</title>
+    <title th:text="${pokemon.name}"/>
 </head>
 <body>
+<table>
+    <tr>
+        <td th:text="${pokemon.name}"/>
+    </tr>
+    <tr>
+        <td>
+            <img
+                    th:src="@{${'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + pokemon.id + '.svg'}}"
+                    width="200px" height="200px">
+        </td>
 
+    </tr>
+</table>
 </body>
 </html>
