@@ -16,6 +16,13 @@
         </td>
     </tr>
     <tr>
+        <td>
+            <a th:href="@{${'/pokedex/evolucion/' + pokemon.chainId}}">
+                <img src="/pokemon-go.png" width="50px" height="50px">
+            </a>
+        </td>
+    </tr>
+    <tr>
         <th th:text="(Numero + ' : ' + ${pokemon.id} )"/>
     </tr>
     <tr>

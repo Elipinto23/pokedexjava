@@ -12,6 +12,8 @@ public class Pokemon {
     private PokemonResource color;
     @JsonProperty("flavor_text_entries")
     private List<PokemonFlavorTextEntry> flavorTextEntries;
+    @JsonProperty("evolution_chain")
+    private PokemonResource evolutionChain;
     private List<PokemonGenera> genera;
     private PokemonResource generation;
     private PokemonResource habitat;

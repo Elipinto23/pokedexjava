@@ -1,5 +1,6 @@
 package com.pokedex.repository;
 
+import com.pokedex.model.Evolution;
 import com.pokedex.model.Pokemon;
 import com.pokedex.model.PokemonLista;
 import lombok.extern.slf4j.Slf4j;
@@ -26,10 +27,20 @@ public class PokemonRepositoryImpl implements PokemonRepository {
     @Override
     public Pokemon obtenerDetallePokemon(Integer numero) {
         try {
-            return restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon-species/"+numero+"/", Pokemon.class);
+            return restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon-species/" + numero + "/", Pokemon.class);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
         return new Pokemon();
+    }
+
+    @Override
+    public Evolution obtenerCadenaEvolucion(Integer cadena) {
+        try {
+            return restTemplate.getForObject("https://pokeapi.co/api/v2/evolution-chain/" + cadena + "/", Evolution.class);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return new Evolution();
     }
 }
